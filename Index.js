@@ -101,8 +101,46 @@ const fs = require("fs");
 // fs.unlinkSync("Folder/Neww.txt");
 
 // Deleting Folder
-fs.rmdirSync("Folder");
+// fs.rmdirSync("Folder");
 
+/* #7: Node.JS Asynchronous File System Core Modules | Reading and Writing File Asynchronously  */
 
+/* We have to Call Callback Function When We Are Using Asynchronous File System Core Modules  It's Compulsory Otherwise it'll Through An Error (  throw new ERR_INVALID_CALLBACK(cb); )  */
 
+// fs.appendFile("r.txt" , "I am A file Which I screated By Using Asynchronous File System" ,
+//         (error) =>
+//         {
+//             console.log(`File Is Created Successfully`);
+//         }
+// );
+/*
+    We Pass them function as an arguments  - A callback
+    that get called when when that task is completed.
+    The Callback has an arguments that tells you whether 
+    operation completed successfully.
+    now we need to say that what to do when fs.appendFile
+    is completed (Even if it's nothing ), And Start Checking Errors
 
+*/
+
+// fs.appendFile("r.txt" , "I am A file Which I screated By Using Asynchronous File System with updated data" ,
+//         (error) =>
+//         {
+//             console.log(`File already Exist and data updated`);
+//         }
+// );
+
+/*  Read File Data using Asynchronous File System */
+
+// fs.readFile("r.txt" , "UTF-8" , (err , data) =>
+// {
+
+//     console.log(data);
+
+// })
+
+/* NODE.JS #8: Synchronous vs Asynchronous Programming in NODE JS  */
+
+const data = fs.readFileSync("r.txt","utf-8");
+console.log(data);
+console.log(` I am Statement after readFileSync`);
