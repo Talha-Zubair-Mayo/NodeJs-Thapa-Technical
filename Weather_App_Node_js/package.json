@@ -1,0 +1,14 @@
+{
+  "name": "weather_app_node_js",
+  "version": "1.0.0",
+  "description": "Weather app",
+  "main": "weather.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Talha Zubair Mayo ",
+  "license": "ISC",
+  "dependencies": {
+    "requests": "^0.3.0"
+  }
+}
